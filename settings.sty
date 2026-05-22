@@ -39,13 +39,6 @@
 \usetikzlibrary{shapes,shadows}
 
 \RequirePackage[normalem]{ulem}
-\RequirePackage{enumitem}
-\RequirePackage{etoolbox}
-\AtBeginEnvironment{rubric}{%
-  \setlength{\parindent}{0pt}%
-  \setlength{\leftskip}{0pt}%
-  \setlength{\parskip}{0pt}%
-}
 \newcommand{\cvhref}[2]{\href{#1}{\emph{\uline{#2}}}}
 \newcommand{\cvitem}[1]{%
   \par\noindent
@@ -53,13 +46,6 @@
   \makebox[1.25em][l]{\textbullet\hspace{0.35em}}#1%
 }
 \newenvironment{cvitems}{}{}
-
-\makeatletter
-\AtBeginDocument{%
-  \patchcmd{\@sentry}{\gdef\@nextentry{\\}}{\gdef\@nextentry{\\[-0.35\baselineskip]}}%
-    {}{\ClassWarning{settings}{Could not patch curve entry row spacing}}%
-}
-\makeatother
 
 \RequirePackage{comment}
 \definecolor{SwishLineColour}{HTML}{88AC0B}
