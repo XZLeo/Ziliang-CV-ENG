@@ -48,9 +48,10 @@
 }
 \newcommand{\cvhref}[2]{\href{#1}{\emph{\uline{#2}}}}
 \newenvironment{cvitems}{%
-  \begin{itemize}[leftmargin=*, align=parleft, topsep=0pt, parsep=0pt, partopsep=0pt, itemsep=0pt, label=\textbullet]%
+  \begin{itemize}[leftmargin=*, align=parleft, nosep, label=\textbullet]%
 }{%
   \end{itemize}%
+  \vspace{-\baselineskip}%
 }
 
 \RequirePackage{comment}
