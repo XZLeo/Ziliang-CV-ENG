@@ -47,12 +47,19 @@
   \setlength{\parskip}{0pt}%
 }
 \newcommand{\cvhref}[2]{\href{#1}{\emph{\uline{#2}}}}
-\newenvironment{cvitems}{%
-  \begin{itemize}[leftmargin=*, align=parleft, nosep, label=\textbullet]%
-}{%
-  \end{itemize}%
-  \vspace{-\baselineskip}%
+\newcommand{\cvitem}[1]{%
+  \par\noindent
+  \hangindent=1.25em\hangafter=1
+  \makebox[1.25em][l]{\textbullet\hspace{0.35em}}#1%
 }
+\newenvironment{cvitems}{}{}
+
+\makeatletter
+\AtBeginDocument{%
+  \patchcmd{\@sentry}{\gdef\@nextentry{\\}}{\gdef\@nextentry{\\[-0.35\baselineskip]}}%
+    {}{\ClassWarning{settings}{Could not patch curve entry row spacing}}%
+}
+\makeatother
 
 \RequirePackage{comment}
 \definecolor{SwishLineColour}{HTML}{88AC0B}
