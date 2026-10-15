@@ -2,8 +2,19 @@
 \usepackage[margin=2.5cm]{geometry}
 \usepackage[hyphens]{url}
 \usepackage[hidelinks]{hyperref}
-\usepackage[T1]{fontenc}
-\usepackage[p,osf,swashQ]{cochineal}
+\usepackage{iftex}
+\ifPDFTeX
+	\usepackage[T1]{fontenc}
+	\usepackage{lmodern}
+\else
+	\usepackage{fontspec}
+	\setmainfont{Cochineal-Roman.otf}[
+		BoldFont=Cochineal-Bold.otf,
+		ItalicFont=Cochineal-Italic.otf,
+		BoldItalicFont=Cochineal-BoldItalic.otf,
+		Numbers=OldStyle
+	]
+\fi
 \usepackage{enumitem}
 
 \setlength{\parindent}{0pt}
@@ -13,7 +24,7 @@
 
 \begin{flushright}
 Ziliang Xiong\\
-ziliang.xiong@liu.se \quad|\quad linkedin.com/in/xzleo \quad|\quad xzleo.github.io\\
+ziliang.xiong@liu.se \quad|\quad linkedin.com/in/ziliangxiong \quad|\quad xzleo.github.io\\
 Linköping University, Sweden
 \end{flushright}
 
@@ -30,18 +41,15 @@ Paris, France
 \vspace{0.5em}
 Dear Hiring Team,
 
-I am writing to apply for the Machine Learning Research internship at Apple MLR in Paris. I am a Ph.D. candidate in computer vision at Linköping University, affiliated with WASP and ELLIIT, and my research centers on \textbf{uncertainty quantification}---a topic explicitly listed in your posting. I am motivated by curiosity-driven, open research that advances both scientific understanding and trustworthy machine learning systems.
+I am applying for the Machine Learning Research internship at Apple MLR in Paris. I am a final-year Ph.D. candidate in computer vision at Linköping University, funded by ELLIIT and affiliated with WASP. My research is motivated by the observation that perception and planning tasks are often formulated as regression problems. I investigate how to accurately estimate and represent predictive uncertainty to build trustworthy learning systems and improve downstream decisions, particularly in safety-critical settings. This focus aligns closely with your work in uncertainty quantification, generative modeling, and foundational machine learning.
 
-\textbf{Why this role fits my research.}
-Your team works on foundational ML problems including uncertainty quantification, generative modeling, efficient inference, and data-centric learning. My Ph.D. applies UQ to computer vision tasks---regression, human pose estimation, and end-to-end autonomous driving---with the goal of making learned models safer and better calibrated. Representative work includes Hinge-Wasserstein for multimodal aleatoric uncertainty (CVPR 2024 workshop) and a systematic study of UQ evaluation metrics (Pattern Recognition Letters, 2024). Ongoing projects extend this line to flow-based pose modeling and collision-aware planning in autonomous driving.
+I began by developing Hinge-Wasserstein to represent multimodal aleatoric uncertainty without imposing a restrictive parametric distribution (CVPR Workshop, 2024). Through this work, I found that correctness prediction and uncertainty calibration require distinct metrics and favor different models. This finding prompted a systematic study of uncertainty metrics for deep regression (\emph{Pattern Recognition Letters}, 2024). I then moved beyond uncertainty as an isolated prediction task to study its impact on downstream decisions. In RiskMonitor (2025), I adapted loss prediction to estimate collision risk from end-to-end driving models and support safer planning; this direction was directly inspired by Michael Kirchhof's work on loss-prediction-based uncertainty quantification. Most recently, MEOM (2026) uses complete 2D heatmaps rather than point estimates for multi-view human pose triangulation and assesses their reliability through HDR calibration. Together, these projects examine not only how uncertainty is estimated, but also how it improves the tasks that depend on it.
 
-\textbf{Research experience aligned with the internship workflow.}
-I am comfortable with the full ML research pipeline your description outlines: identifying research gaps, reviewing state-of-the-art methods, prototyping novel approaches, running experiments at scale, and writing for top-tier venues. I develop primarily in \textbf{PyTorch} and \textbf{JAX}, and I have experience designing experimental protocols and evaluation metrics---skills I also apply as a peer reviewer for IJCV, CVPR, and AAAI. As primary advisor to nine master's students (2023--2026), I collaborate regularly in a multi-researcher setting and value constructive feedback throughout a project.
+My current work extends this trajectory to calibrating multimodal outputs from vision-language-action models for automated vehicles, supported by a Vinnova FFI project and an upcoming WASP-funded research stay at TU Delft. This setting brings together the themes that have shaped my Ph.D.---multimodal prediction, calibration, and safety-critical perception---while opening a path toward more general learning systems.
 
-\textbf{Why Apple MLR Paris.}
-I am drawn to Apple's emphasis on open research with product-scale impact, and to the opportunity to collaborate with MLR colleagues across Europe and the US. The topics you highlight---generative modeling, efficient inference, optimization, and data-centric ML---connect naturally to my current and planned work. I would welcome the chance to contribute new findings through publications and, where appropriate, open-source implementations.
+I bring experience across the full research cycle: framing problems, developing methods in PyTorch, designing evaluation protocols, running multi-GPU experiments, and communicating results through publications. Through oral and poster presentations at international conferences, workshops, and summer schools, I have learned to communicate technical ideas clearly to diverse, cross-cultural audiences. Serving as primary advisor to nine master's students and as a reviewer for IJCV, CVPR, and AAAI has also strengthened my ability to give precise feedback and collaborate across projects. I would value the opportunity to bring this combination of methodological depth and application-driven thinking to Apple MLR, and to contribute research that is both scientifically rigorous and useful at scale.
 
-Thank you for considering my application. I would be glad to discuss how my background in uncertainty-aware vision and deep learning research can support your team's goals.
+Thank you for considering my application. I would be glad to discuss how my research in uncertainty-aware machine learning could contribute to your team.
 
 \vspace{1em}
 Sincerely,\\

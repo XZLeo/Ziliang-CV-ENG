@@ -13,9 +13,18 @@
 
 \ifxetexorluatex
   \usepackage{fontspec}
-  \usepackage[p,osf,swashQ]{cochineal}
-  \usepackage[medium,bold]{cabin}
-  \usepackage[varqu,varl,scale=0.9]{zi4}
+  \setmainfont{Cochineal-Roman.otf}[
+    BoldFont=Cochineal-Bold.otf,
+    ItalicFont=Cochineal-Italic.otf,
+    BoldItalicFont=Cochineal-BoldItalic.otf,
+    Numbers=OldStyle
+  ]
+  \setsansfont{Cabin-Regular.otf}[
+    BoldFont=Cabin-Bold.otf,
+    ItalicFont=Cabin-Italic.otf,
+    BoldItalicFont=Cabin-BoldItalic.otf
+  ]
+  \setmonofont{Latin Modern Mono}[Scale=0.9]
 \else
   \usepackage[T1]{fontenc}
   \usepackage[p,osf,swashQ]{cochineal}
@@ -24,18 +33,23 @@
 \fi
 
 \includecomment{fullonly}
+\headerscale{0.72}
 
 \leftheader{%
   {\LARGE\bfseries\sffamily Ziliang Xiong, Ph.D. Student}
 
   \makefield{\faEnvelope[regular]}{\href{mailto:ziliang.xiong@liu.se}{\texttt{ziliang.xiong@liu.se}}}
-  \makefield{\faLinkedin}{\href{http://linkedin.com/in/xzleo}{\texttt{linkedin.com/in/xzleo}}}
+  \makefield{\faLinkedin}{\href{https://www.linkedin.com/in/ziliangxiong}{\texttt{www.linkedin.com/in/ziliangxiong}}}
   \par
   \makefield{\faGlobe}{\href{http://liu.se/en/employee/zilxi06}{\texttt{liu.se/en/employee/zilxi06}}}
   \makefield{\faGithub}{\href{https://xzleo.github.io/}{\texttt{xzleo.github.io}}}
 }
 
-\rightheader{~}
+\rightheader{%
+  {\small\bfseries\sffamily Internship --}\\
+  {\small\sffamily Machine Learning}\\
+  {\small\sffamily Research}
+}
 \begin{fullonly}
 \photoscale{0.13}
 \end{fullonly}
