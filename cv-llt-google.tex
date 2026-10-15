@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%
+% Google Research Scientist PhD Intern 2027 — tailored CV variant
+% Compile: latexmk -xelatex cv-llt-google.tex
+%
+\documentclass[a4paper,skipsamekey,11pt,english]{curve}
+
+\PassOptionsToPackage{style=ieee,sorting=ydnt,uniquename=init,defernumbers=true}{biblatex}
+\usepackage{settings}
+\usepackage{needspace}
+\geometry{bottom=1.5cm}
+
+\DefineBibliographyStrings{english}{url={\textsc{url}}}
+\addbibresource{own-bib.bib}
+\mynames{Xiong/Ziliang}
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \setmainfont{Cochineal-Roman.otf}[
+    BoldFont=Cochineal-Bold.otf,
+    ItalicFont=Cochineal-Italic.otf,
+    BoldItalicFont=Cochineal-BoldItalic.otf,
+    Numbers=OldStyle
+  ]
+  \setsansfont{Cabin-Regular.otf}[
+    BoldFont=Cabin-Bold.otf,
+    ItalicFont=Cabin-Italic.otf,
+    BoldItalicFont=Cabin-BoldItalic.otf
+  ]
+  \setmonofont{Latin Modern Mono}[Scale=0.9]
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+\includecomment{fullonly}
+\headerscale{0.72}
+\newcommand{\contactfield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2}
+
+\leftheader{%
+  \begin{tabular}{@{}l@{}}
+    {\LARGE\bfseries\sffamily Ziliang Xiong, Ph.D. Student} \\[0.3ex]
+    \begin{tabular}{@{}ll@{}}
+      \contactfield{\faEnvelope[regular]}{\href{mailto:ziliang.xiong@liu.se}{\texttt{ziliang.xiong@liu.se}}} &
+      \contactfield{\faLinkedin}{\href{https://www.linkedin.com/in/ziliangxiong}{\texttt{linkedin.com/in/ziliangxiong}}} \\[-0.4ex]
+      \contactfield{\faGlobe}{\href{http://liu.se/en/employee/zilxi06}{\texttt{liu.se/en/employee/zilxi06}}} &
+      \contactfield{\faGithub}{\href{https://xzleo.github.io/}{\texttt{xzleo.github.io}}}
+    \end{tabular}
+  \end{tabular}
+}
+
+\rightheader{%
+  {\small\bfseries\sffamily Research Scientist}\\
+  {\small\sffamily PhD Intern -- 2027}\\
+  {\small\sffamily Multimodal Computer Vision}
+}
+\begin{fullonly}
+\photoscale{0.13}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+
+\makeheaders[c]
+\setlength{\tabcolsep}{4pt}
+
+\makerubric{summary-google}
+\vspace{-2mm}
+\makerubric{education-google}
+\vspace{-2mm}
+\makerubric{research-google}
+\vspace{-2mm}
+\Needspace{5\baselineskip}
+\input{publications}
+\vspace{-2mm}
+\makerubric{funding-google}
+\vspace{-2mm}
+\makerubric{experience-google}
+\vspace{-2mm}
+\makerubric{skills-google}
+
+\end{document}
